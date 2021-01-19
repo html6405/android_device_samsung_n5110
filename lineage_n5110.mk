@@ -1,11 +1,13 @@
 # Release name
 PRODUCT_RELEASE_NAME := n5110
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
-
 # Inherit device configuration
-$(call inherit-product, device/samsung/n5110/full_n5110.mk)
+$(call inherit-product, device/samsung/n5110/n5110.mk)
+$(call inherit-product, device/samsung/kona-common/kona-common.mk)
+$(call inherit-product, device/samsung/smdk4412-common/common.mk)
+
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := n5110
@@ -18,5 +20,6 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	PRODUCT_NAME=konawifixx \
 	TARGET_DEVICE=konawifi \
-	BUILD_FINGERPRINT="samsung/konawifixx/konawifi:4.4.2/KOT49H/N5110XXDNF1:user/release-keys" \
 	PRIVATE_BUILD_DESC="konawifixx-user 4.4.2 KOT49H N5110XXDNF1 release-keys"
+
+BUILD_FINGERPRINT := samsung/konawifixx/konawifi:4.4.2/KOT49H/N5110XXDNF1:user/release-keys
