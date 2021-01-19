@@ -6,6 +6,9 @@ $(call inherit-product, device/samsung/n5110/n5110.mk)
 $(call inherit-product, device/samsung/kona-common/kona-common.mk)
 $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
