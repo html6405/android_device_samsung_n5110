@@ -30,9 +30,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/init.target.usb.rc:root/init.target.usb.rc
 
-# Include common makefile
-$(call inherit-product, vendor/samsung/n5110/n5110-vendor.mk)
-$(call inherit-product, device/samsung/kona-common/kona-common.mk)
+BOARD_PROVIDES_LIBRIL := false
 
 $(call inherit-product-if-exists, vendor/samsung/n5110/n5110-vendor-blobs.mk)
 
