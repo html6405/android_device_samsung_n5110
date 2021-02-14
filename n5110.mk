@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, device/samsung/kona-common/kona-common.mk)
+
 LOCAL_PATH := device/samsung/n5110
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -25,10 +27,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/include/hardware/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/include/hardware/gps.xml:vendor/etc/gps.xml \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/rootdir/init.target.usb.rc:root/init.target.usb.rc
 
 # Include common makefile
 $(call inherit-product, vendor/samsung/n5110/n5110-vendor.mk)
 $(call inherit-product, device/samsung/kona-common/kona-common.mk)
+
+$(call inherit-product-if-exists, vendor/samsung/n5110/n5110-vendor-blobs.mk)
+
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk
