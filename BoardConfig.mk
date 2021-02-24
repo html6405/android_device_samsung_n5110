@@ -14,23 +14,19 @@
 # limitations under the License.
 #
 
+# Include n51xx BoardConfigCommon
 -include device/samsung/kona-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/n5110
-
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := lineageos_n5110_defconfig
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+N5110 := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/kona-common/rootdir/fstab.smdk4x12
-RECOVERY_FSTAB_VERSION := 2
-BOARD_RECOVERY_SWIPE := true
-BOARD_RECOVERY_SWIPE_SWAPXY := true
-
-BOARD_PROVIDES_LIBRIL := false
+WITHOUT_RIL := true
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := konawifi,n5110,GT-N5110,konawifixx
+
+# Selinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/kona-common/selinux
