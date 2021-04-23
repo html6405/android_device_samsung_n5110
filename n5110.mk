@@ -32,6 +32,9 @@ PRODUCT_COPY_FILES += \
 
 BOARD_PROVIDES_LIBRIL := false
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
 $(call inherit-product-if-exists, vendor/samsung/n5110/n5110-vendor-blobs.mk)
 
 # Vendor properties
