@@ -302,6 +302,7 @@ on post-fs-data
     restorecon /data/system/yas*
     restorecon /data/.cid.info
     restorecon_recursive /efs
+    restorecon_recursive /efs/wifi
     restorecon_recursive /tombstones/qcks
 
 ############################
@@ -337,7 +338,7 @@ on property:sys.boot_completed=1
     chown system system /efs/wifi/.mac.cob
     chown system system /efs/wifi/.mac.info
     chmod 0666 /efs/wifi/.mac.cob
-    chmod 0666 /efs/wifi/.mac.info
+    chmod 0664 /efs/wifi/.mac.info
     start macloader
     write /data/.cid.info murata
     chown system root /data/.cid.info
