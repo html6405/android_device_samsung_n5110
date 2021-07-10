@@ -25,8 +25,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/init.target.usb.rc:root/init.target.usb.rc
+    $(LOCAL_PATH)/rootdir/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
+    $(LOCAL_PATH)/rootdir/init.target.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.usb.rc
 
 BOARD_PROVIDES_LIBRIL := false
 
