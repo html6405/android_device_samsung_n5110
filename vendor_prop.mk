@@ -76,7 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sys.fw.bg_apps_limit=16
 
 # Set max background services
-PRODUCT_PROPERTY_OVERRIDES += \
+# PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.max_starting_bg=4
 
 # GPS
@@ -89,5 +89,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	fw.show_multiuserui=1
 
 # Wifi
-PRODUCT_PROPERTY_OVERRIDES += \
+# PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.supplicant_scan_interval=240
