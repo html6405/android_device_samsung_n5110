@@ -33,6 +33,3 @@ BOARD_PROVIDES_LIBRIL := false
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
 $(call inherit-product-if-exists, vendor/samsung/n5110/n5110-vendor-blobs.mk)
-
-# Vendor properties
--include $(LOCAL_PATH)/vendor_prop.mk
