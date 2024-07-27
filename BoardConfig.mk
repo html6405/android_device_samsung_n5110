@@ -18,7 +18,7 @@
 -include device/samsung/kona-common/BoardConfigCommon.mk
 
 # Inline kernel building
-TARGET_KERNEL_CONFIG := lineageos_n5110_defconfig
+TARGET_KERNEL_CONFIG := lineageos_n5100_defconfig
 
 N5110 := true
 
